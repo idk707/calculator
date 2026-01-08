@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(64, 132, 64);
+    }
+    .total_rectagle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 100px;
+        width: 200px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin: 20px;
+    }
+    .sq_one{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin: 20px;
+    }
+</style>
+<body class="container">
+    <div class="total_rectagle"> 
+        <h1 style="font-size: 50px;" id="numberDisplay">0</h1>
+    </div>
+    <div class="sq_one" onclick="addNumber()">
+        <h1>1</h1>
+    </div>
+</body>
+<script>
+    let number = ('0');
+
+    const addNumber = () => {
+        document.getElementById("numberDisplay").textContent = number;
+    };
+</script>
+</html>
