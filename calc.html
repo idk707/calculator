@@ -30,7 +30,8 @@
     }
     .history_rectangle{
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
+        flex-direction: column;
         background-color: rgb(226, 224, 224);
         height: 100vh;
         width: 500px;
@@ -38,15 +39,18 @@
         border-radius: 10%;
         margin-bottom: 10px;
         margin-left: -500px;
+        text-align:center;
     }
     .history_container{
         display: flex;
-        /* justify-content: right; */
         float: right;
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
     #historyList{
         list-style-type: none;
+        text-align: center;
         padding: 0;
         margin: 0;
     }
@@ -228,6 +232,7 @@
     <div class="history_container">
         <div class="history_rectangle">
             <h1 style="font-size: 30px">History</h1>
+            <ul id="historyList" style="font-size: 50px;"></ul>
         </div>
     </div>
 
@@ -307,6 +312,7 @@
         
         } else {
             if (currentNumber === '0') {
+                if (num === 0) return;
                 currentNumber = num.toString();
             } else{
                 currentNumber += num;
@@ -329,12 +335,24 @@
         }
 
         history.push(`${previousNumber} ${operator} ${currentNumber} = ${result}`);
-        document.getElementById("historyDisplay").textContent = history.join('\n');
+        updateHistory();
 
         currentNumber = result.toString();
         operator = null;
         previousNumber = '';
         document.getElementById("numberDisplay").textContent = currentNumber;
+    };
+    const updateHistory = () => {
+        const historyList = document.getElementById('historyList');
+        historyList.innerHTML = '';
+        history.forEach(entry => {
+            const li = document.createElement('li');
+            li.textContent = entry;
+            historyList.appendChild(li);
+        if (history.length > 10) {
+            history.shift();
+            }
+        });
     };
 </script>
 </html>
