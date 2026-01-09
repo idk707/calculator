@@ -37,13 +37,23 @@
         border: 2px solid black;
         border-radius: 10%;
         margin-bottom: 10px;
-        margin-left: -250px;
+        margin-left: -500px;
     }
     .history_container{
         display: flex;
         /* justify-content: right; */
         float: right;
         align-items: center;
+    }
+    #historyList{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    #historyList li{
+        margin-bottom: 5px;
+        padding: 5px;
+        border-bottom: 1px solid gray;
     }
     .total_rectangle{
         display: flex;
@@ -217,7 +227,7 @@
 
     <div class="history_container">
         <div class="history_rectangle">
-            <h1 style="font-size: 30px" id="historyDisplay">History</h1>
+            <h1 style="font-size: 30px">History</h1>
         </div>
     </div>
 
@@ -283,6 +293,7 @@
 </body>
 <script>
     let number = 0;
+    let history = [];
 
     let currentNumber = '';
     let previousNumber = '';
@@ -317,7 +328,8 @@
             result = parseInt(previousNumber) / parseInt(currentNumber);
         }
 
-
+        history.push(`${previousNumber} ${operator} ${currentNumber} = ${result}`);
+        document.getElementById("historyDisplay").textContent = history.join('\n');
 
         currentNumber = result.toString();
         operator = null;
