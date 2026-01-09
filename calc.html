@@ -7,7 +7,7 @@
 </head>
 <style>
     .container1{
-        height: 100vh;
+        height: 90vh;
         align-items: center;
         justify-content: center;
         display: flex;
@@ -33,7 +33,7 @@
         /* justify-content: center; */
         flex-direction: column;
         background-color: rgb(226, 224, 224);
-        height: 100vh;
+        height:90vh;
         width: 500px;
         border: 2px solid black;
         border-radius: 10%;
@@ -232,7 +232,7 @@
     <div class="history_container">
         <div class="history_rectangle">
             <h1 style="font-size: 30px">History</h1>
-            <ul id="historyList" style="font-size: 50px;"></ul>
+            <ul id="historyList" style="font-size: 50px;" onclick="updateHistory"></ul>
         </div>
     </div>
 
@@ -304,6 +304,7 @@
     let previousNumber = '';
     let operator = null;
     const op = ['+', '-', '*', '/'];
+
     const addNumber = (num) => {
         if (op.includes(num)) {
             operator = num;
@@ -334,7 +335,12 @@
             result = parseInt(previousNumber) / parseInt(currentNumber);
         }
 
-        history.push(`${previousNumber} ${operator} ${currentNumber} = ${result}`);
+        history.push({
+            previous: previousNumber,
+            op: operator,
+            current: currentNumber,
+            result: result
+        });
         updateHistory();
 
         currentNumber = result.toString();
@@ -345,14 +351,28 @@
     const updateHistory = () => {
         const historyList = document.getElementById('historyList');
         historyList.innerHTML = '';
-        history.forEach(entry => {
+
+        history.forEach((entry, index) => {
             const li = document.createElement('li');
-            li.textContent = entry;
+            li.textContent = `${entry.previous} ${entry.op} ${entry.current} = ${entry.result}`;
+            li.style.cursor = "pointer"
+
+            li.onclick = () => loadFromHistory(index);
+
             historyList.appendChild(li);
-        if (history.length > 10) {
+        
+            if (history.length > 10) {
             history.shift();
             }
         });
     };
+    const loadFromHistory = (index) => {
+        const entry = history[index]
+        previousNumber = entry.previous;
+        op = entry.op
+        currentNumber = entry.result.toString();
+
+        document.getElementById("numberDisplay").textContent = currentNumber;
+    }
 </script>
 </html>
