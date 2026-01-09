@@ -232,7 +232,7 @@
     <div class="history_container">
         <div class="history_rectangle">
             <h1 style="font-size: 30px">History</h1>
-            <ul id="historyList" style="font-size: 50px;" onclick="updateHistory"></ul>
+            <ul id="historyList" style="font-size: 50px;"></ul>
         </div>
     </div>
 
@@ -327,6 +327,9 @@
         let result = 0;
         if (operator === '+') {
             result = parseInt(previousNumber) + parseInt(currentNumber);
+            if (result >= 9,999,999,999){
+                document.getElementById()
+            }
         }else if (operator === '-') {
             result = parseInt(previousNumber) - parseInt(currentNumber);
         }else if (operator === '*') {
@@ -352,6 +355,10 @@
         const historyList = document.getElementById('historyList');
         historyList.innerHTML = '';
 
+        if (history.length > 10) {
+            history.shift();
+            }
+
         history.forEach((entry, index) => {
             const li = document.createElement('li');
             li.textContent = `${entry.previous} ${entry.op} ${entry.current} = ${entry.result}`;
@@ -360,16 +367,12 @@
             li.onclick = () => loadFromHistory(index);
 
             historyList.appendChild(li);
-        
-            if (history.length > 10) {
-            history.shift();
-            }
         });
     };
     const loadFromHistory = (index) => {
         const entry = history[index]
-        previousNumber = entry.previous;
-        op = entry.op
+        previousNumber = '';
+        operator = null
         currentNumber = entry.result.toString();
 
         document.getElementById("numberDisplay").textContent = currentNumber;
