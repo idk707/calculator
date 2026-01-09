@@ -8,7 +8,6 @@
 <style>
     .container1{
         height: 100vh;
-        /* background-color: rgb(64, 132, 64); */
         align-items: center;
         justify-content: center;
         display: flex;
@@ -31,20 +30,20 @@
     }
     .history_rectangle{
         display: flex;
-        justify-content: right;
-        align-items: center;
+        justify-content: center;
         background-color: rgb(226, 224, 224);
-        height: 100px;
+        height: 100vh;
         width: 500px;
         border: 2px solid black;
         border-radius: 10%;
         margin-bottom: 10px;
+        margin-left: -250px;
     }
     .history_container{
         display: flex;
-        justify-content: center;
+        /* justify-content: right; */
+        float: right;
         align-items: center;
-        margin-bottom: 20px;
     }
     .total_rectangle{
         display: flex;
@@ -317,6 +316,8 @@
         }else if (operator === '/') {
             result = parseInt(previousNumber) / parseInt(currentNumber);
         }
+
+
 
         currentNumber = result.toString();
         operator = null;
