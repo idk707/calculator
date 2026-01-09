@@ -8,7 +8,7 @@
 <style>
     .container1{
         height: 100vh;
-        background-color: rgb(64, 132, 64);
+        /* background-color: rgb(64, 132, 64); */
         align-items: center;
         justify-content: center;
         display: flex;
@@ -24,7 +24,29 @@
         justify-content: center;
         align-items: center;
     }
-    .total_rectagle{
+    .third_row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .history_rectangle{
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 100px;
+        width: 500px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin-bottom: 10px;
+    }
+    .history_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .total_rectangle{
         display: flex;
         justify-content: right;
         align-items: center;
@@ -183,7 +205,7 @@
         border: 2px solid rgb(0, 0, 0);
         border-radius: 10%;
     }
-    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .plus_sign, .equal_sign, .clear, .sub_sign{
+    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .sq_seven, .sq_eight, .sq_nine, .plus_sign, .equal_sign, .clear, .sub_sign{
 
         margin-top: 10px;
         cursor: pointer;
@@ -192,10 +214,32 @@
         font-size: 35px;
     }
 </style>
-<body class="container1">
+<body style="background-color: rgb(64, 132, 64);">
 
-    <div class="total_rectagle"> 
+    <div class="history_container">
+        <div class="history_rectangle">
+            <h1 style="font-size: 30px" id="historyDisplay">History</h1>
+        </div>
+    </div>
+
+    <div class="container1">
+    <div class="total_rectangle"> 
         <h1 style="font-size: 65px" id="numberDisplay">0</h1>
+    </div>
+    
+    <div class="third_row">
+        <button class="sq_seven" onclick="addNumber(7)">
+            <h1 class="text">7</h1>
+        </button>
+        <button class="sq_eight" onclick="addNumber(8)">
+            <h1 class="text">8</h1>
+        </button>
+        <button class="sq_nine" onclick="addNumber(9)">
+            <h1 class="text">9</h1>
+        </button>
+        <button class="sub_sign" onclick="addNumber('*')">
+            <h1 style="font-size: 45px;">×</h1>
+        </button>
     </div>
     <div class="sec_row">
         <button class="sq_four" onclick="addNumber(4)">
@@ -235,6 +279,7 @@
         <button class="equal_sign" onclick="calculate()">
         <h1 class="text">=</h1>
     </button>
+    </div>
     </div>
 </body>
 <script>
