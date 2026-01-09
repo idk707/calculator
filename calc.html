@@ -19,6 +19,11 @@
         float: left;
         flex-direction: row;
     }
+    .sec_row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .total_rectagle{
         display: flex;
         justify-content: right;
@@ -35,10 +40,10 @@
         align-items: center;
         background-color: rgb(226, 224, 224);
         height: 110px;
-        width: 220px;
+        width: 230px;
         border: 2px solid black;
         border-radius: 10%;
-        margin: 20px;
+        margin-left: 10px;
     }
     .sq_one{
         justify-content: center;
@@ -71,6 +76,70 @@
         border-radius: 10%;
         margin-left: 10px;
     }
+    .sq_four{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+    }
+    .sq_five{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin-left: 10px;
+    }
+    .sq_six{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin-left: 10px;
+    }
+    .sq_seven{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin-right: 10px;
+    }
+    .sq_eight{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+    }
+    .sq_nine{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin-left: 10px;
+    }
     .plus_sign{
         display: flex;
         justify-content: center;
@@ -80,6 +149,7 @@
         width: 110px;
         border: 2px solid black;
         border-radius: 10%;
+        margin-left: 10px;
     }
     .equal_sign{
         display: flex;
@@ -90,7 +160,7 @@
         width: 110px;
         border: 2px solid black;
         border-radius: 10%;
-        margin-left:-10px
+        margin-left: 10px;
     }
     .clear{
         display: flex;
@@ -101,9 +171,9 @@
         width: 110px;
         border: 2px solid black;
         border-radius: 10%;
-        margin-right: 10px;
     }
-    .sq_zero, .sq_one, .sq_two, .sq_three, .plus_sign, .equal_sign, .clear{
+    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .plus_sign, .equal_sign, .clear{
+
         margin-top: 10px;
         cursor: pointer;
     }
@@ -116,10 +186,17 @@
     <div class="total_rectagle"> 
         <h1 style="font-size: 65px" id="numberDisplay">0</h1>
     </div>
-    <div class="container2"> 
-        <button class="clear" onclick="currentNumber = ''; previousNumber = ''; operator = null; document.getElementById('numberDisplay').textContent = '0';">
-            <h1 class="text">Clear</h1>
+    <div class="sec_row">
+        <button class="sq_four" onclick="addNumber(4)">
+            <h1 class="text">4</h1>
         </button>
+        <button class="sq_five" onclick="addNumber(5)">
+            <h1 class="text">5</h1>
+        </button>
+        <button class="sq_six" onclick="addNumber(6)">
+            <h1 class="text">6</h1>
+    </div>
+    <div class="container2"> 
         <button class="sq_one" onclick="addNumber(1)">
             <h1 class="text">1</h1>
         </button>
@@ -129,18 +206,21 @@
         <button class="sq_three" onclick="addNumber(3)">
             <h1 class="text">3</h1>
         </button>
+        <button class="plus_sign" onclick="addNumber('+')">
+        <h1 style="color: white;">+</h1>
+        </button>
     </div>
     <div class="container2">
+        <button class="clear" onclick="currentNumber = ''; previousNumber = ''; operator = null; document.getElementById('numberDisplay').textContent = '0';">
+            <h1 class="text">Clear</h1>
+        </button>
         <button class="sq_zero" onclick="addNumber(0)">
         <h1 class="text">0</h1>
-    </button>
+        </button>
         <button class="equal_sign" onclick="calculate()">
         <h1 class="text">=</h1>
     </button>
     </div>
-    <button class="plus_sign" onclick="addNumber('+')">
-        <h1 style="color: white;">+</h1>
-    </button>
 </body>
 <script>
     let number = 0;
