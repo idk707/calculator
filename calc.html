@@ -327,8 +327,8 @@
         let result = 0;
         if (operator === '+') {
             result = parseInt(previousNumber) + parseInt(currentNumber);
-            if (result >= 9,999,999,999){
-                document.getElementById()
+            if (result >= 9_999_999_999){
+                document.getElementById("numberDisplay").textContent = "NaN"
             }
         }else if (operator === '-') {
             result = parseInt(previousNumber) - parseInt(currentNumber);
