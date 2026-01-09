@@ -151,6 +151,17 @@
         border-radius: 10%;
         margin-left: 10px;
     }
+    .sub_sign{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(142, 129, 129);
+        height: 110px;
+        width: 110px;
+        border: 2px solid black;
+        border-radius: 10%;
+        margin-left: 10px;
+    }
     .equal_sign{
         display: flex;
         justify-content: center;
@@ -169,10 +180,10 @@
         background-color: rgb(255, 0, 0);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
+        border: 2px solid rgb(0, 0, 0);
         border-radius: 10%;
     }
-    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .plus_sign, .equal_sign, .clear{
+    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .plus_sign, .equal_sign, .clear, .sub_sign{
 
         margin-top: 10px;
         cursor: pointer;
@@ -195,6 +206,10 @@
         </button>
         <button class="sq_six" onclick="addNumber(6)">
             <h1 class="text">6</h1>
+        </button>
+        <button class="sub_sign" onclick="addNumber('-')">
+            <h1 style="font-size: 45px;">-</h1>
+        </button>
     </div>
     <div class="container2"> 
         <button class="sq_one" onclick="addNumber(1)">
@@ -228,9 +243,9 @@
     let currentNumber = '';
     let previousNumber = '';
     let operator = null;
-
+    const op = ['+', '-', '*', '/'];
     const addNumber = (num) => {
-        if (num === '+') {
+        if (op.includes(num)) {
             operator = num;
             previousNumber = currentNumber;
             currentNumber = '';
@@ -250,6 +265,12 @@
         let result = 0;
         if (operator === '+') {
             result = parseInt(previousNumber) + parseInt(currentNumber);
+        }else if (operator === '-') {
+            result = parseInt(previousNumber) - parseInt(currentNumber);
+        }else if (operator === '*') {
+            result = parseInt(previousNumber) * parseInt(currentNumber);
+        }else if (operator === '/') {
+            result = parseInt(previousNumber) / parseInt(currentNumber);
         }
 
         currentNumber = result.toString();
