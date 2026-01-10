@@ -8,7 +8,7 @@
 <!-- CSS -->
 <style>
     .container1{
-        height: 90vh;
+        height: 100vh;
         align-items: center;
         justify-content: center;
         display: flex;
@@ -34,13 +34,15 @@
         /* justify-content: center; */
         flex-direction: column;
         background-color: rgb(226, 224, 224);
-        height:90vh;
+        height: 650px;
         width: 500px;
         border: 2px solid black;
         border-radius: 10%;
         margin-bottom: 10px;
-        margin-left: -500px;
         text-align:center;
+        margin-left: -250px;
+        margin-right: 150px;
+        margin-top: 35px;
     }
     .history_container{
         display: flex;
@@ -58,7 +60,7 @@
     #historyList li{
         margin-bottom: 5px;
         padding: 5px;
-        border-bottom: 1px solid gray;
+        border: 1px solid gray;
     }
     .total_rectangle{
         display: flex;
@@ -67,7 +69,7 @@
         background-color: rgb(226, 224, 224);
         height: 150px;
         width: 500px;
-        border: 2px solid black;
+        border: 2px solid rgb(0, 0, 0);
         border-radius: 10%;
     }
     .sq_zero{
@@ -76,9 +78,7 @@
         align-items: center;
         background-color: rgb(226, 224, 224);
         height: 110px;
-        width: 230px;
-        border: 2px solid black;
-        border-radius: 10%;
+        width: 110px;
         margin-left: 10px;
     }
     .sq_one{
@@ -87,8 +87,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-right: 10px
     }
     .sq_two{
@@ -98,8 +96,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
     }
     .sq_three{
         display: flex;
@@ -108,8 +104,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-left: 10px;
     }
     .sq_four{
@@ -119,8 +113,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
     }
     .sq_five{
         display: flex;
@@ -129,8 +121,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-left: 10px;
     }
     .sq_six{
@@ -140,8 +130,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-left: 10px;
     }
     .sq_seven{
@@ -151,8 +139,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-right: 10px;
     }
     .sq_eight{
@@ -162,8 +148,6 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
     }
     .sq_nine{
         display: flex;
@@ -172,55 +156,56 @@
         background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-left: 10px;
     }
     .plus_sign{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-left: 10px;
     }
     .sub_sign{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(142, 129, 129);
+        background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
+        margin-left: 10px;
+    }
+    .divide_sign{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(226, 224, 224);
+        height: 110px;
+        width: 110px;
         margin-left: 10px;
     }
     .equal_sign{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(0, 255, 0);
+        background-color: rgb(226, 224, 224);
         height: 110px;
         width: 110px;
-        border: 2px solid black;
-        border-radius: 10%;
         margin-left: 10px;
     }
     .clear{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgb(255, 0, 0);
+        background-color: rgb(179, 39, 39);
         height: 110px;
         width: 110px;
+        
+    }
+    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .sq_seven, .sq_eight, .sq_nine, .plus_sign, .equal_sign, .clear, .sub_sign, .divide_sign{
         border: 2px solid rgb(0, 0, 0);
         border-radius: 10%;
-    }
-    .sq_zero, .sq_one, .sq_two, .sq_three, .sq_four, .sq_five, .sq_six, .sq_seven, .sq_eight, .sq_nine, .plus_sign, .equal_sign, .clear, .sub_sign{
-
         margin-top: 10px;
         cursor: pointer;
     }
@@ -229,7 +214,7 @@
     }
 </style>
 <!-- HTML -->
-<body style="background-color: rgb(64, 132, 64);">
+<body style="background-color: rgb(64, 132, 64);"">
 
     <div class="history_container">
         <div class="history_rectangle">
@@ -253,8 +238,8 @@
         <button class="sq_nine" onclick="addNumber(9)">
             <h1 class="text">9</h1>
         </button>
-        <button class="sub_sign" onclick="addNumber('*')">
-            <h1 style="font-size: 45px;">×</h1>
+        <button class="divide_sign" onclick="addNumber('/')">
+            <h1 class="text">÷</h1>
         </button>
     </div>
     <div class="sec_row">
@@ -267,8 +252,9 @@
         <button class="sq_six" onclick="addNumber(6)">
             <h1 class="text">6</h1>
         </button>
-        <button class="sub_sign" onclick="addNumber('-')">
-            <h1 style="font-size: 45px;">-</h1>
+
+        <button class="sub_sign" onclick="addNumber('*')">
+            <h1 style="font-size: 45px;">×</h1>
         </button>
     </div>
     <div class="container2"> 
@@ -281,19 +267,22 @@
         <button class="sq_three" onclick="addNumber(3)">
             <h1 class="text">3</h1>
         </button>
-        <button class="plus_sign" onclick="addNumber('+')">
-        <h1 style="color: white;">+</h1>
+        <button class="sub_sign" onclick="addNumber('-')">
+            <h1 style="font-size: 45px;">-</h1>
         </button>
     </div>
     <div class="container2">
         <button class="clear" onclick="currentNumber = ''; previousNumber = ''; operator = null; document.getElementById('numberDisplay').textContent = '0';">
             <h1 class="text">Clear</h1>
         </button>
-        <button class="sq_zero" onclick="addNumber(0)">
+    <button class="sq_zero" onclick="addNumber(0)">
         <h1 class="text">0</h1>
-        </button>
-        <button class="equal_sign" onclick="calculate()">
+    </button>
+    <button class="equal_sign" onclick="calculate()">
         <h1 class="text">=</h1>
+    </button>
+    <button class="plus_sign" onclick="addNumber('+')">
+        <h1 class="text">+</h1>
     </button>
     </div>
     </div>
@@ -307,13 +296,18 @@
     let previousNumber = '';
     let operator = null;
     const op = ['+', '-', '*', '/'];
+    let max_result = 9_999_999_999;
 
     const addNumber = (num) => {
         if (op.includes(num)) {
+            const next = parseInt(currentNumber + num, 10)
+            if (next >= max_result){
+                return;
+            }
+            next.toString()
             operator = num;
             previousNumber = currentNumber;
             currentNumber = '';
-        
         } else {
             if (currentNumber === '0') {
                 if (num === 0) return;
@@ -326,20 +320,45 @@
 
     };
 
+    const capResult = (value) =>{
+        if (!Number.isFinite(value)) return "Nan";{
+            return Math.min(value,max_result);
+        }
+    }
+
     const calculate = () => {
         let result = 0;
         if (operator === '+') {
             result = parseInt(previousNumber) + parseInt(currentNumber);
-            if (result >= 9_999_999_999){
+            if (result >= max_result){
                 document.getElementById("numberDisplay").textContent = "NaN"
+                return;
             }
         }else if (operator === '-') {
             result = parseInt(previousNumber) - parseInt(currentNumber);
+             if (result >= max_result){
+                document.getElementById("numberDisplay").textContent = "NaN"
+                return;
+            }
         }else if (operator === '*') {
             result = parseInt(previousNumber) * parseInt(currentNumber);
+             if (result >= max_result){
+                document.getElementById("numberDisplay").textContent = "NaN"
+                return;
+            }
         }else if (operator === '/') {
+            if (currentNumber === 0){
+                document.getElementById("numberDisplay").textContent = "NaN";
+                return;
+            }
             result = parseInt(previousNumber) / parseInt(currentNumber);
+             if (result >= max_result){
+                document.getElementById("numberDisplay").textContent = "NaN"
+                return;
+            }
         }
+
+        result = capResult(result);
 
         history.push({
             previous: previousNumber,
