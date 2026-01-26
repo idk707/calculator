@@ -7,9 +7,9 @@ app = Flask(__name__)
 def calculate():
     data = request.get_json()
 
-    a = int(data("a")
-    b = int(data("b")
-    op = data("op")
+    a = int(data["a"])
+    b = int(data["b"])
+    op = data["op"]
 
     if op == "+":
         result = a + b
